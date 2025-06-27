@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube説明文ジェネレーター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube説明文ジェネレーター</h1>
+
+        <div class="card">
+            <h2>アイテムを登録</h2>
+            <form id="add-item-form">
+                <div class="form-group">
+                    <label for="item-name">名前:</label>
+                    <input type="text" id="item-name" placeholder="例: React" required>
+                </div>
+                <div class="form-group">
+                    <label for="item-url">URL:</label>
+                    <input type="url" id="item-url" placeholder="例: https://react.dev" required>
+                </div>
+                <div class="form-group">
+                    <label for="item-type">区分:</label>
+                    <select id="item-type">
+                        <option value="ツール">ツール</option>
+                        <option value="素材サイト">素材サイト</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+                <button type="submit">登録</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>登録済みアイテム一覧</h2>
+            <div>
+                <button id="select-all-button">全選択</button>
+                <button id="deselect-all-button">全選択解除</button>
+            </div>
+            <div id="item-list">
+                <!-- 登録されたアイテムがここに表示されます -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>説明文を生成</h2>
+            <button id="generate-button">テキストを生成</button>
+            <textarea id="output-textarea" rows="10" readonly></textarea>
+            <button id="copy-button">クリップボードにコピー</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
